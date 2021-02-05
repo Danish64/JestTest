@@ -32,7 +32,7 @@ module.exports.registerUser = function (username) {
 module.exports.applyDiscount = function (order) {
   const customer = db.getCustomerSync(order.customerId);
 
-  if (customer.points > 10) order.totalPrice *= 0.9;
+  if (customer.points > 10) return (order.totalPrice *= 0.9);
 };
 
 // Mock functions
